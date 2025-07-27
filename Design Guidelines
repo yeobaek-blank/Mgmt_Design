@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여백 - 디자인 가이드라인</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background: #FAFAFA;
+            color: #0D0D0D;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3A8C75;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            color: #31594E;
+            font-weight: 400;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #09402C;
+            margin-bottom: 8px;
+        }
+        
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: #31594E;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Typography Section */
+        .typography-demo {
+            margin: 32px 0;
+        }
+        
+        .font-display {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #3A8C75;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+        }
+        
+        .font-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+        
+        .font-example {
+            padding: 24px;
+            background: #F8FFFE;
+            border-radius: 12px;
+            border-left: 4px solid #3A8C75;
+        }
+        
+        .font-weight {
+            margin-bottom: 12px;
+        }
+        
+        .font-weight-label {
+            font-size: 0.8rem;
+            color: #31594E;
+            margin-bottom: 4px;
+        }
+        
+        /* Colors Section */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .color-swatch {
+            height: 120px;
+            width: 100%;
+        }
+        
+        .color-info {
+            padding: 20px;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: #0D0D0D;
+            margin-bottom: 8px;
+        }
+        
+        .color-values {
+            font-size: 0.9rem;
+            color: #31594E;
+        }
+        
+        .color-usage {
+            font-size: 0.8rem;
+            color: #09402C;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* Logo Section */
+        .logo-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+        
+        .logo-example {
+            text-align: center;
+            padding: 40px;
+            background: #F8FFFE;
+            border-radius: 12px;
+        }
+        
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3A8C75;
+            margin-bottom: 12px;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.9rem;
+            color: #31594E;
+            letter-spacing: 2px;
+        }
+        
+        /* Layout Guidelines */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .layout-example {
+            background: #F8FFFE;
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px dashed #3A8C75;
+        }
+        
+        .layout-title {
+            font-weight: 600;
+            color: #09402C;
+            margin-bottom: 16px;
+        }
+        
+        .spacing-demo {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        /* Application Examples */
+        .application-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .app-example {
+            background: #3A8C75;
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .app-example h3 {
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .app-example p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .dark-theme {
+            background: #0A261C;
+        }
+        
+        .light-theme {
+            background: white;
+            color: #0D0D0D;
+            border: 2px solid #3A8C75;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>여백</h1>
+            <p>문헌정보학 동아리 디자인 가이드라인</p>
+        </div>
+        
+        <div class="section">
+            <div class="section-subtitle">Typography</div>
+            <h2 class="section-title">서체 시스템</h2>
+            
+            <div class="typography-demo">
+                <div class="font-display">여백 Aa</div>
+                <p style="color: #31594E;">Inter + Noto Sans KR - 정보의 체계적 정리를 위한 명확하고 현대적인 서체</p>
+            </div>
+            
+            <div class="font-info">
+                <div class="font-example">
+                    <div class="font-weight">
+                        <div class="font-weight-label">H1 - 헤딩 타이틀</div>
+                        <div style="font-size: 2rem; font-weight: 700; color: #3A8C75;">다양한 학문의 융합</div>
+                    </div>
+                    <div class="font-weight">
+                        <div class="font-weight-label">H2 - 섹션 제목</div>
+                        <div style="font-size: 1.5rem; font-weight: 600; color: #09402C;">문제 해결 능력</div>
+                    </div>
+                </div>
+                
+                <div class="font-example">
+                    <div class="font-weight">
+                        <div class="font-weight-label">Body - 본문</div>
+                        <div style="font-size: 1rem; font-weight: 400; color: #0D0D0D;">문헌정보학을 바탕으로 한 학문적 탐구와 커뮤니티 구축을 통해 지식의 여백을 채워나갑니다.</div>
+                    </div>
+                    <div class="font-weight">
+                        <div class="font-weight-label">Caption - 설명</div>
+                        <div style="font-size: 0.875rem; font-weight: 400; color: #31594E;">Knowledge grows in the margins</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-subtitle">Colors</div>
+            <h2 class="section-title">컬러 팔레트</h2>
+            
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #3A8C75;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Forest Green</div>
+                        <div class="color-values">#3A8C75<br>RGB: 58, 140, 117</div>
+                        <div class="color-usage">Primary Brand Color</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #31594E;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Teal</div>
+                        <div class="color-values">#31594E<br>RGB: 49, 89, 78</div>
+                        <div class="color-usage">Secondary Text</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #09402C;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Dark Forest</div>
+                        <div class="color-values">#09402C<br>RGB: 9, 64, 44</div>
+                        <div class="color-usage">Headers & Emphasis</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0A261C;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Midnight Green</div>
+                        <div class="color-values">#0A261C<br>RGB: 10, 38, 28</div>
+                        <div class="color-usage">Dark Backgrounds</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0D0D0D;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Carbon Black</div>
+                        <div class="color-values">#0D0D0D<br>RGB: 13, 13, 13</div>
+                        <div class="color-usage">Primary Text</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-subtitle">Branding</div>
+            <h2 class="section-title">브랜드 아이덴티티</h2>
+            
+            <div class="logo-showcase">
+                <div class="logo-example">
+                    <div class="logo-text">여백</div>
+                    <div class="logo-subtitle">YEOBAEK</div>
+                </div>
+                
+                <div class="logo-example" style="background: #0A261C;">
+                    <div class="logo-text" style="color: #FFFFFF;">여백</div>
+                    <div class="logo-subtitle" style="color: #3A8C75;">YEOBAEK</div>
+                </div>
+                
+                <div class="logo-example" style="background: #3A8C75;">
+                    <div class="logo-text" style="color: #FFFFFF;">여백</div>
+                    <div class="logo-subtitle" style="color: #F8FFFE;">YEOBAEK</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-subtitle">Layout</div>
+            <h2 class="section-title">레이아웃 가이드라인</h2>
+            
+            <div class="layout-grid">
+                <div class="layout-example">
+                    <div class="layout-title">여백의 원칙</div>
+                    <div class="spacing-demo">
+                        <strong>기본 단위: 8px</strong><br>
+                        모든 여백과 간격은 8의 배수 사용
+                    </div>
+                    <div class="spacing-demo">
+                        <strong>최소 여백: 16px</strong><br>
+                        텍스트와 요소 간 최소 간격
+                    </div>
+                    <div class="spacing-demo">
+                        <strong>섹션 간격: 40px</strong><br>
+                        주요 섹션 간 구분을 위한 여백
+                    </div>
+                </div>
+                
+                <div class="layout-example">
+                    <div class="layout-title">타이포그래피 위계</div>
+                    <div class="spacing-demo">
+                        <strong>제목 간격</strong><br>
+                        H1-H2: 24px, H2-H3: 16px
+                    </div>
+                    <div class="spacing-demo">
+                        <strong>문단 간격</strong><br>
+                        본문 간 16px, 문단 내 1.6 line-height
+                    </div>
+                    <div class="spacing-demo">
+                        <strong>리스트 간격</strong><br>
+                        항목 간 8px, 그룹 간 16px
+                    </div>
+                </div>
+                
+                <div class="layout-example">
+                    <div class="layout-title">컴포넌트 규칙</div>
+                    <div class="spacing-demo">
+                        <strong>카드 패딩</strong><br>
+                        내부 여백 24px, 외부 간격 16px
+                    </div>
+                    <div class="spacing-demo">
+                        <strong>버튼 크기</strong><br>
+                        최소 높이 44px, 좌우 패딩 24px
+                    </div>
+                    <div class="spacing-demo">
+                        <strong>둥근 모서리</strong><br>
+                        카드 16px, 버튼 8px, 작은 요소 4px
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-subtitle">Applications</div>
+            <h2 class="section-title">적용 예시</h2>
+            
+            <!-- SNS 콘텐츠 예시 -->
+            <div style="margin-bottom: 48px;">
+                <h3 style="color: #09402C; margin-bottom: 24px; font-size: 1.25rem;">SNS 콘텐츠</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                    <!-- Instagram Post 예시 -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: linear-gradient(135deg, #3A8C75 0%, #31594E 100%); padding: 40px; text-align: center; color: white;">
+                            <div style="font-size: 2rem; font-weight: 700; margin-bottom: 16px;">여백</div>
+                            <div style="font-size: 1rem; opacity: 0.9; margin-bottom: 24px;">새로운 세미나 안내</div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 16px; border-radius: 8px;">
+                                <div style="font-size: 0.9rem; font-weight: 500;">AI와 정보학의 만남</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 4px;">2024.03.15 (금) 오후 7시</div>
+                            </div>
+                        </div>
+                        <div style="padding: 16px; font-size: 0.8rem; color: #31594E;">Instagram Post - 1080x1080px</div>
+                    </div>
+                    
+                    <!-- Instagram Story 예시 -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: #0A261C; padding: 40px 24px; text-align: center; color: white; position: relative;">
+                            <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #3A8C75;">여백</div>
+                            <div style="font-size: 0.9rem; margin-bottom: 20px;">지식의 여백을 채우다</div>
+                            <div style="background: #3A8C75; padding: 12px; border-radius: 20px; display: inline-block;">
+                                <div style="font-size: 0.8rem;">📚 새로운 연구 프로젝트</div>
+                            </div>
+                        </div>
+                        <div style="padding: 16px; font-size: 0.8rem; color: #31594E;">Instagram Story - 1080x1920px</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 웹사이트 예시 -->
+            <div style="margin-bottom: 48px;">
+                <h3 style="color: #09402C; margin-bottom: 24px; font-size: 1.25rem;">웹사이트</h3>
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <!-- Header -->
+                    <div style="background: white; padding: 16px 32px; border-bottom: 1px solid #F0F0F0; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #3A8C75;">여백</div>
+                        <div style="display: flex; gap: 24px; font-size: 0.9rem; color: #31594E;">
+                            <span>소개</span>
+                            <span>활동</span>
+                            <span>세미나</span>
+                            <span>연락처</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Section -->
+                    <div style="background: linear-gradient(135deg, #3A8C75 0%, #31594E 100%); padding: 60px 32px; text-align: center; color: white;">
+                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 16px;">지식의 여백을 채우다</div>
+                        <div style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px;">문헌정보학을 바탕으로 한 학문 융합과 문제 해결</div>
+                        <div style="background: rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 8px; display: inline-block; font-size: 0.9rem;">
+                            함께 성장하는 커뮤니티
+                        </div>
+                    </div>
+                    
+                    <!-- Content Section -->
+                    <div style="padding: 40px 32px;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+                            <div style="text-align: center; padding: 24px;">
+                                <div style="width: 48px; height: 48px; background: #3A8C75; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">📚</div>
+                                <div style="font-weight: 600; color: #09402C; margin-bottom: 8px;">학문 융합</div>
+                                <div style="font-size: 0.9rem; color: #31594E;">다양한 분야의 지식을 연결합니다</div>
+                            </div>
+                            <div style="text-align: center; padding: 24px;">
+                                <div style="width: 48px; height: 48px; background: #31594E; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">🔬</div>
+                                <div style="font-weight: 600; color: #09402C; margin-bottom: 8px;">문제 해결</div>
+                                <div style="font-size: 0.9rem; color: #31594E;">체계적 접근으로 해답을 찾습니다</div>
+                            </div>
+                            <div style="text-align: center; padding: 24px;">
+                                <div style="width: 48px; height: 48px; background: #09402C; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">🌱</div>
+                                <div style="font-weight: 600; color: #09402C; margin-bottom: 8px;">커뮤니티</div>
+                                <div style="font-size: 0.9rem; color: #31594E;">함께 성장하는 공간을 만듭니다</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 16px; font-size: 0.8rem; color: #31594E; border-top: 1px solid #F0F0F0;">웹사이트 메인페이지 - 반응형 디자인</div>
+                </div>
+            </div>
+            
+            <!-- PPT 예시 -->
+            <div style="margin-bottom: 48px;">
+                <h3 style="color: #09402C; margin-bottom: 24px; font-size: 1.25rem;">프레젠테이션</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+                    <!-- Title Slide -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: linear-gradient(45deg, #0A261C 0%, #31594E 100%); padding: 40px; text-align: center; color: white; height: 240px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 2rem; font-weight: 700; margin-bottom: 16px;">여백 동아리</div>
+                            <div style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 24px;">2024 활동 보고서</div>
+                            <div style="font-size: 0.8rem; opacity: 0.7;">문헌정보학과 | 2024.12</div>
+                        </div>
+                        <div style="padding: 12px; font-size: 0.8rem; color: #31594E;">Title Slide</div>
+                    </div>
+                    
+                    <!-- Content Slide -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="padding: 32px; height: 240px;">
+                            <div style="font-size: 1.5rem; font-weight: 600; color: #09402C; margin-bottom: 24px;">주요 성과</div>
+                            <div style="space-y: 16px;">
+                                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                    <div style="width: 8px; height: 8px; background: #3A8C75; border-radius: 50%; margin-right: 12px;"></div>
+                                    <div style="color: #0D0D0D; font-size: 0.9rem;">학술 세미나 12회 개최</div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                    <div style="width: 8px; height: 8px; background: #31594E; border-radius: 50%; margin-right: 12px;"></div>
+                                    <div style="color: #0D0D0D; font-size: 0.9rem;">연구 프로젝트 5개 완료</div>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                    <div style="width: 8px; height: 8px; background: #09402C; border-radius: 50%; margin-right: 12px;"></div>
+                                    <div style="color: #0D0D0D; font-size: 0.9rem;">신규 회원 25명 영입</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding: 12px; font-size: 0.8rem; color: #31594E;">Content Slide</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 포스터 예시 -->
+            <div style="margin-bottom: 48px;">
+                <h3 style="color: #09402C; margin-bottom: 24px; font-size: 1.25rem;">포스터 디자인</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                    <!-- 세미나 포스터 -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: linear-gradient(180deg, #3A8C75 0%, #09402C 100%); padding: 40px 24px; color: white; text-align: center; height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;">여백</div>
+                                <div style="font-size: 0.8rem; opacity: 0.8; letter-spacing: 1px;">YEOBAEK SEMINAR</div>
+                            </div>
+                            
+                            <div>
+                                <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2;">AI 시대의<br>정보학</div>
+                                <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 24px;">인공지능과 문헌정보학의 융합</div>
+                            </div>
+                            
+                            <div style="background: rgba(255,255,255,0.15); padding: 16px; border-radius: 8px;">
+                                <div style="font-size: 0.9rem; margin-bottom: 4px;">📅 2024년 3월 15일 (금)</div>
+                                <div style="font-size: 0.9rem; margin-bottom: 4px;">🕖 오후 7:00 - 9:00</div>
+                                <div style="font-size: 0.9rem;">📍 중앙도서관 세미나실</div>
+                            </div>
+                        </div>
+                        <div style="padding: 12px; font-size: 0.8rem; color: #31594E;">세미나 포스터 - A3 Size</div>
+                    </div>
+                    
+                    <!-- 모집 포스터 -->
+                    <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                        <div style="background: #0A261C; padding: 40px 24px; color: white; text-align: center; height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 700; margin-bottom: 12px; color: #3A8C75;">여백</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">문헌정보학과 동아리</div>
+                            </div>
+                            
+                            <div>
+                                <div style="font-size: 1.6rem; font-weight: 600; margin-bottom: 16px;">신입회원<br>모집</div>
+                                <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 24px;">함께 성장할 동료를 찾습니다</div>
+                            </div>
+                            
+                            <div>
+                                <div style="background: #3A8C75; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+                                    <div style="font-size: 0.8rem; font-weight: 600;">📝 지원 기간</div>
+                                    <div style="font-size: 0.9rem;">3월 1일 - 3월 20일</div>
+                                </div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">지식의 여백을 함께 채워나가요</div>
+                            </div>
+                        </div>
+                        <div style="padding: 12px; font-size: 0.8rem; color: #31594E;">모집 포스터 - A3 Size</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 기존 그리드 -->
+            <div class="application-grid">
+                <div class="app-example" style="background: #09402C;">
+                    <h3>인쇄물</h3>
+                    <p>리플릿, 명함, 스티커 등 오프라인 홍보물에 브랜드 아이덴티티 적용</p>
+                </div>
+                
+                <div class="app-example light-theme">
+                    <h3>문서 템플릿</h3>
+                    <p>회의록, 보고서, 제안서 등 공식 문서에 일관된 디자인 시스템 적용</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-subtitle">Guidelines</div>
+            <h2 class="section-title">사용 가이드라인</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px;">
+                <div>
+                    <h3 style="color: #3A8C75; margin-bottom: 16px;">✓ Do</h3>
+                    <ul style="color: #31594E; line-height: 1.8;">
+                        <li>브랜드 컬러를 일관성 있게 사용</li>
+                        <li>충분한 여백을 확보하여 가독성 향상</li>
+                        <li>위계적 타이포그래피로 정보 구조화</li>
+                        <li>접근성을 고려한 색상 대비 유지</li>
+                        <li>미니멀하고 깔끔한 디자인 추구</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #09402C; margin-bottom: 16px;">✗ Don't</h3>
+                    <ul style="color: #31594E; line-height: 1.8;">
+                        <li>브랜드 컬러 팔레트 외 색상 무분별 사용</li>
+                        <li>과도한 장식이나 복잡한 그래픽 요소</li>
+                        <li>가독성을 해치는 폰트 조합</li>
+                        <li>일관성 없는 간격과 정렬</li>
+                        <li>로고나 브랜드명 임의 변형</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
